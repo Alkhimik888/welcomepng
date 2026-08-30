@@ -72,3 +72,6 @@ h1 {
   box-shadow: 0 8px 26px rgba(31, 35, 40, 0.10);
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+.foot { margin-top: 28px; font-size: 14px; opacity: .72 }
+.foot a { color: inherit }
