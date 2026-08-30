@@ -23,7 +23,9 @@
     if (key) element.setAttribute('alt', message(key, element.getAttribute('alt') ?? ''));
   });
 
-  document.title = `${message('appName', 'QR Code Detector')} ${message('welcomeInstalled', 'is installed')}`;
+  // The fallback is what a visitor actually sees: this page is served from
+  // GitHub Pages, where the extension's locale messages do not resolve.
+  document.title = `${message('appName', 'HTML to PNG')} ${message('welcomeInstalled', 'is installed')}`;
 
   const canvas = document.getElementById('confetti-canvas');
   const trigger = document.getElementById('confetti-trigger');
