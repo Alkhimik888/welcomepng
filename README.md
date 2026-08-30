@@ -9,3 +9,4 @@ Counter **112031289** («HTML to PNG — Welcome», owner's account) is wired in
 `index.html` (2026-08-28). One counter per welcome page: welcomepng uses its own
 (112031184 — welcomeqr). Installs are visible as visits to this page (each install opens it
 exactly once). The privacy policy for the extension lives at `/policy/`.
+The uninstall survey lives at `/uninstall/` and embeds the product’s Google Form.
