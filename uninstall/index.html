@@ -18,11 +18,10 @@
 <link rel="icon" type="image/png" sizes="128x128" href="../icon128.png"/>
 <link rel="apple-touch-icon" sizes="128x128" href="../icon128.png"/>
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
-
 <style>
+/* Same self-hosted Nunito as the welcome page — one product, one voice. */
+@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url('../nunito-400.woff2') format('woff2')}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url('../nunito-800.woff2') format('woff2')}
 :root{
   --bg: oklch(1 0 0);
   --surface: oklch(0.975 0.005 245);
@@ -33,9 +32,9 @@
   --accent: oklch(0.55 0.16 45);
   --accent-strong: oklch(0.48 0.17 45);
   --accent-tint: oklch(0.95 0.04 45);
-  --r: 3px;
-  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --r: 10px;
+  --sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+  --mono: ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -51,26 +50,25 @@ header.site{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:
 .nav{display:flex;align-items:center;gap:20px;height:60px}
 .brand{display:flex;align-items:center;gap:9px;text-decoration:none;margin-right:auto}
 .brand .logo-img{width:26px;height:26px;border-radius:6px;flex:none;display:block}
-.wordmark{font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:0.04em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
-.nav a.back{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--muted)}
+.wordmark{font-family:var(--sans);font-weight:800;font-size:16px;letter-spacing:0;color:var(--ink);white-space:nowrap}
+.nav a.back{font-family:var(--sans);font-size:14px;font-weight:400;color:var(--muted)}
 .nav a.back:hover{color:var(--accent);text-decoration:none}
 
 main{padding:56px 0 72px}
-.eyebrow{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:0.04em;color:var(--accent);display:block;margin-bottom:14px}
 h1{font-size:clamp(1.9rem,1.4rem + 2.2vw,2.6rem);font-weight:800;letter-spacing:-0.025em;line-height:1.12;text-wrap:balance;margin-bottom:16px}
 .lead{font-size:1.12rem;line-height:1.6;margin-bottom:24px;max-width:64ch}
 .form-frame{
   background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
-  overflow:hidden;min-height:520px;
+  overflow:hidden;min-height:600px;
 }
-.form-frame iframe{display:block;width:100%;height:520px;border:0}
+.form-frame iframe{display:block;width:100%;height:600px;border:0}
 
 footer.site{border-top:1px solid var(--line);padding:30px 0;background:var(--bg)}
 .foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .foot-links{display:flex;gap:22px}
-.foot-links a{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.foot-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
 .foot-links a:hover{color:var(--accent);text-decoration:none}
-.foot-copy{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:0.02em}
+.foot-copy{font-family:var(--sans);font-size:13px;color:var(--muted);letter-spacing:0}
 
 a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r)}
 
@@ -79,6 +77,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
   .container{padding:0 18px}
   main{padding:40px 0 56px}
   .foot{flex-direction:column;align-items:flex-start;gap:14px}
+  .form-frame,.form-frame iframe{min-height:760px;height:760px}
 }
 </style>
 </head>
@@ -87,17 +86,17 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
 <header class="site"><div class="container nav">
   <a href="../" class="brand" aria-label="HTML to PNG Converter home">
     <img class="logo-img" src="../icon128.png" width="26" height="26" alt="" aria-hidden="true"/>
-    <span class="wordmark">HTML TO PNG</span>
+    <span class="wordmark">HTML to PNG</span>
   </a>
   <a href="../" class="back">&larr; Home</a>
 </div></header>
 
 <main><div class="container">
-  <span class="eyebrow">Uninstall</span>
   <h1>You uninstalled HTML to PNG Converter</h1>
+  <p class="lead">One question, no sign-in needed. It takes ten seconds and shapes the next version.</p>
   <div class="form-frame">
     <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSckzi1XWLXq_sXr2pcspx4eqADGaMN7g28a5hl4cveTNQXG9Q/viewform?embedded=true"
+      src="https://docs.google.com/forms/d/e/1FAIpQLSckzi1XWLXq_sXr2pcspx4eqADGaMN7g28a5hl4cveTNQXG9Q/viewform?embedded=true&amp;hl=en"
       title="Why did you uninstall HTML to PNG Converter"
       loading="lazy">Loading</iframe>
   </div>
@@ -106,7 +105,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
 <footer class="site"><div class="container foot">
   <a href="../" class="brand" aria-label="HTML to PNG Converter home">
     <img class="logo-img" src="../icon128.png" width="26" height="26" alt="" aria-hidden="true"/>
-    <span class="wordmark">HTML TO PNG</span>
+    <span class="wordmark">HTML to PNG</span>
   </a>
   <nav class="foot-links" aria-label="Footer">
     <a href="../">Home</a>

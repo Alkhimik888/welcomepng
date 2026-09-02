@@ -17,11 +17,10 @@
 <link rel="icon" type="image/png" sizes="128x128" href="../icon128.png"/>
 <link rel="apple-touch-icon" sizes="128x128" href="../icon128.png"/>
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
-
 <style>
+/* Same self-hosted Nunito as the welcome page — one product, one voice. */
+@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url('../nunito-400.woff2') format('woff2')}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url('../nunito-800.woff2') format('woff2')}
 :root{
   --bg: oklch(1 0 0);
   --surface: oklch(0.975 0.005 245);
@@ -32,9 +31,9 @@
   --accent: oklch(0.55 0.16 45);
   --accent-strong: oklch(0.48 0.17 45);
   --accent-tint: oklch(0.95 0.04 45);
-  --r: 3px;
-  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --r: 10px;
+  --sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+  --mono: ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -55,16 +54,15 @@ header.site{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:
 .nav{display:flex;align-items:center;gap:20px;height:60px}
 .brand{display:flex;align-items:center;gap:9px;text-decoration:none;margin-right:auto}
 .brand .logo-img{width:26px;height:26px;border-radius:6px;flex:none;display:block}
-.wordmark{font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:0.04em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
-.nav a.back{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--muted)}
+.wordmark{font-family:var(--sans);font-weight:800;font-size:16px;letter-spacing:0;color:var(--ink);white-space:nowrap}
+.nav a.back{font-family:var(--sans);font-size:14px;font-weight:400;color:var(--muted)}
 .nav a.back:hover{color:var(--accent);text-decoration:none}
 
 /* ── Doc ── */
 main{padding:56px 0 72px}
-.eyebrow{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:0.04em;color:var(--accent);display:block;margin-bottom:14px}
 h1{font-size:clamp(1.9rem,1.4rem + 2.2vw,2.6rem);font-weight:800;letter-spacing:-0.025em;line-height:1.12;text-wrap:balance;margin-bottom:16px}
 h1 .accent{color:var(--accent)}
-.meta-line{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:0.01em;margin-bottom:22px}
+.meta-line{font-family:var(--sans);font-size:14px;color:var(--muted);letter-spacing:0.01em;margin-bottom:22px}
 .lead{font-size:1.12rem;line-height:1.6;margin-bottom:8px;padding-bottom:30px;border-bottom:1px solid var(--line);max-width:64ch}
 
 article h2{font-size:1.18rem;font-weight:700;letter-spacing:-0.01em;margin:38px 0 12px;text-wrap:balance}
@@ -79,9 +77,9 @@ strong{font-weight:700;color:var(--ink)}
 footer.site{border-top:1px solid var(--line);padding:30px 0;background:var(--bg)}
 .foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .foot-links{display:flex;gap:22px}
-.foot-links a{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.foot-links a{font-family:var(--sans);font-size:14px;color:var(--muted)}
 .foot-links a:hover{color:var(--accent);text-decoration:none}
-.foot-copy{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:0.02em}
+.foot-copy{font-family:var(--sans);font-size:13px;color:var(--muted);letter-spacing:0}
 
 a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r)}
 
@@ -98,15 +96,14 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
 <header class="site"><div class="container nav">
   <a href="../" class="brand" aria-label="HTML to PNG Converter home">
     <img class="logo-img" src="../icon128.png" width="26" height="26" alt="" aria-hidden="true"/>
-    <span class="wordmark">HTML TO PNG</span>
+    <span class="wordmark">HTML to PNG</span>
   </a>
   <a href="../" class="back">&larr; Home</a>
 </div></header>
 
 <main><div class="container"><article>
-  <span class="eyebrow">Privacy policy</span>
   <h1>Your files stay <span class="accent">on your device</span></h1>
-  <p class="meta-line">Last updated: August 28, 2026. Applies to the HTML to PNG Converter browser extension.</p>
+  <p class="meta-line">Last updated: September 2, 2026. Applies to the HTML to PNG Converter browser extension.</p>
   <p class="lead">HTML to PNG Converter turns an HTML file, pasted HTML code, or the page you are viewing into a PNG or JPG image. All of it happens inside your browser, on your computer. The extension has no server, no account, and makes no network requests during conversion — so there is nothing we could collect even if we wanted to.</p>
 
   <h2>What stays on your device</h2>
@@ -114,7 +111,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
   <ul>
     <li><strong>The HTML you convert</strong> — a file you choose, code you paste, or the page you capture. It is processed in your browser's memory and is never uploaded anywhere.</li>
     <li><strong>The images it makes</strong> — PNG and JPG results are kept in your browser's local storage just long enough for you to save or copy them, then expire automatically.</li>
-    <li><strong>Your conversion choices</strong> — width, scale, and background apply to the current conversion only. The extension does not keep a profile or history of what you converted.</li>
+    <li><strong>Your conversion choices</strong> — the background you pick applies to the current conversion only. The extension does not keep a profile or history of what you converted.</li>
   </ul>
   <p>Old results clean themselves up. Uninstalling the extension removes everything it ever stored.</p>
 
@@ -143,7 +140,10 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
   <p>HTML to PNG Converter is intended for users 13 and older. We do not knowingly collect personal data from children.</p>
 
   <h2>What we do not do</h2>
-  <p>No accounts. No analytics. No ads. No tracking. No watermarks. No selling or sharing of any data — we never see your data in the first place.</p>
+  <p>No accounts. No analytics or tracking inside the extension. No ads. No watermarks. No selling or sharing of any data — we never see your data in the first place.</p>
+
+  <h2>Our website</h2>
+  <p>Right after installation the extension opens the welcome page on this site once. That page uses <a href="https://yandex.com/legal/confidential/">Yandex Metrika</a>, a visitor-statistics service, so we can see how many people install the extension and whether the setup instructions work. It records visits, clicks and scrolling on that page only; it never sees anything you convert, and the extension itself sends nothing. This policy page and the uninstall page do not use it.</p>
 
   <h2>Limited Use</h2>
   <p>The use of information received from Google APIs will adhere to the <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use/">Chrome Web Store User Data Policy</a>, including the Limited Use requirements.</p>
@@ -159,7 +159,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
 <footer class="site"><div class="container foot">
   <a href="../" class="brand" aria-label="HTML to PNG Converter home">
     <img class="logo-img" src="../icon128.png" width="26" height="26" alt="" aria-hidden="true"/>
-    <span class="wordmark">HTML TO PNG</span>
+    <span class="wordmark">HTML to PNG</span>
   </a>
   <nav class="foot-links" aria-label="Footer">
     <a href="../">Home</a>
